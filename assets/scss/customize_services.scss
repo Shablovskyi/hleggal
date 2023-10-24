@@ -1,0 +1,561 @@
+@import './variables.scss';
+
+.section__link {
+  display: flex;
+  align-items: center;
+  color: $color-section-brand;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  &:hover{
+    .section__link_arow{
+      stroke: $link-active-color;
+    }
+  }
+  
+}
+
+//TODO: Header
+#main {
+  overflow: hidden;
+  background: linear-gradient(
+    228.57deg,
+    #323264 11.93%,
+    #323264 57.17%,
+    #643e72 87.46%
+  );
+  border-radius: 0px 0px 12px 12px;
+  padding-bottom: 30px;
+  @media (min-width: $display-sm) {
+    padding-bottom: 0;
+  }
+}
+
+.header {
+  z-index: 1;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "contacts contacts contacts"
+    "logo . menu"
+    "greating greating greating";
+  grid-template-columns: auto 1fr auto;
+  @media (min-width: $display-sm) {
+    grid-template-areas:
+      "contacts"
+      "logo"
+      "menu"
+      "greating";
+    grid-template-columns: unset;
+  }
+  @media (min-width: $display-smd) {
+    grid-template-areas:
+      "logo . contacts"
+      "logo . menu"
+      "greating greating greating";
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.lang_conteiner__btn {
+  font-family: "Montserrat", sans-serif;
+  display: inline-flex;
+  width: 33px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  font-size: 12px;
+  color: $color-main;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.lang_conteiner__btn_active {
+  background: $link-active-color;
+  border-radius: 8px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: $bg-header-contacts;
+  grid-area: contacts;
+  @media (min-width: $display-sm) {
+    background: none;
+    padding: 50px 60px 0;
+    justify-content: start;
+  }
+  @media (min-width: $display-smd) {
+    width: 490px;
+    padding-bottom: 30px;
+    justify-content: end;
+  }
+  @media (min-width: $display-bg) {
+    padding-right: 160px;
+  }
+}
+
+.dot_separator {
+  background: $color-main;
+  width: 6px;
+  height: 6px;
+  border-radius: 360px;
+  display: none;
+  @media (min-width: $display-sm) {
+    display: inline-block;
+    margin: 0 6px;
+  }
+}
+
+.address {
+  display: none;
+  @media (min-width: $display-sm) {
+    display: inline-block;
+    font-size: 16px;
+  }
+}
+
+.phone {
+  font-weight: 700;
+  font-size: 16px;
+  justify-content: flex-end;
+}
+
+.social_media {
+  display: none;
+  @media (min-width: $display-sm) {
+    display: inline-block;
+  }
+}
+
+.logo{
+  grid-area: logo;
+  padding-left: 15px;
+  img{
+    display: inline-block;
+    @media (min-width: $display-sm) {
+      width: 302px;
+    }
+  }
+  @media (min-width: $display-sm) {
+    display: inline-block;
+    padding-left: 60px;
+    padding-bottom: 30px;
+  }
+  @media (min-width: $display-smd) {
+    padding-left: 60px;
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+  @media (min-width: $display-bg) {
+    padding-left: 160px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: menu;
+  @media (min-width: $display-sm) {
+    display: inline-block;
+  }
+}
+
+.burger_menu {
+  width: 32px;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin-right: 15px;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+  @media (min-width: $display-sm) {
+    display: none;
+  }
+}
+
+.burger_menu__item {
+  border: solid 1px $color-main;
+  margin: 6px 0;
+  width: 24px;
+  cursor: pointer;
+}
+
+.nav_menu {
+  display: none;
+  @media (min-width: $display-sm) {
+    display: flex;
+    padding-left: 60px;
+    li {
+      margin-right: 15px;
+    }
+  }
+  @media (min-width: $display-smd) {
+    justify-content: end;
+    padding-right: 45px;
+  }
+  @media (min-width: $display-bg) {
+    padding-right: 145px;
+  }
+}
+
+.navigation__menu{
+  font-weight: 700;
+  font-size: 16px;
+  &:hover, &:focus{
+    color: $link-active-color;
+    border-bottom: 3px solid $link-active-color;
+    padding-bottom: 3px;
+  }
+  &_active{
+    color: $link-active-color;
+  }
+}
+
+// TODO: Services
+.container__servises {
+  padding: 30px 30px 0;
+  @media (min-width: $display-sm) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 60px 0;
+  }
+  @media (min-width: $display-bg) {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+
+.section__title {
+  background: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0 0 30px;
+  @media (min-width: $display-sm) {
+    font-size: 38px;
+    margin-bottom: 60px;
+  }
+}
+
+.services__wrapper {
+  @media (min-width: $display-sm) {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 648px;
+  }
+  @media(min-width: $display-smd){
+    min-width: 904px;
+  }
+}
+
+.services__item {
+  margin-bottom: 30px;
+  @media (min-width: $display-sm) {
+    width: calc(50% - 30px);
+    margin-right: 60px;
+    margin-bottom: 60px;
+  }
+  @media (min-width: $display-smd) {
+    width: calc(33.33% - 40px);
+    margin-right: 60px;
+  }
+  &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(6) {
+    @media (min-width: $display-sm) {
+      margin-right: 0px;
+    }
+  }
+  &:nth-of-type(2), &:nth-of-type(4){
+    @media(min-width: $display-smd) {
+      margin-right: 60px;
+    } 
+  }
+  &:nth-of-type(3){
+    @media(min-width: $display-smd) {
+      margin-right: 0;
+    } 
+  }
+}
+
+.services__img {
+  width: 92px;
+  height: 92px;
+  background: $color-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  margin: 0 0 30px;
+  img {
+    margin: 0;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.services_title {
+  color: $color-section-brand;
+  font-weight: 700;
+  font-size: 22px;
+  &:hover{
+    color: $link-active-color;
+  }
+}
+
+.servises_paragraf {
+  color: $color-main;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// TODO: Shadow
+.firs_shadow {
+  background: $color-first-shadow;
+  height: 10px;
+  min-width: 335px;
+  margin: 0 20px;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.second_shadow {
+  background: $color-second-shadow;
+  height: 10px;
+  min-width: 295px;
+  margin: 0 40px;
+  border-radius: 0px 0px 12px 12px;
+}
+
+// TODO: Section clients
+#clients{
+  padding-top: 60px;
+}
+.clients_title {
+  text-transform: uppercase;
+  color: $color-clients-title;
+  margin: 0 0 30px;
+  text-align: center;
+}
+
+.conteiner_clients {
+  display: grid;
+  max-height: 720px;
+  grid-auto-flow: row;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media (min-width: $display-sm) {
+    display: none;
+  }
+}
+
+.conteiner_clients_normal {
+  display: none;
+  @media (min-width: $display-sm) {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 768px;
+  }
+  @media (min-width: $display-bg) {
+    padding: 0 100px 60px;
+  }
+}
+
+.client {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  position: relative;
+  object-fit: cover;
+  @media (min-width: $display-sm) {
+    width: 33.33%;
+  }
+  @media (min-width: $display-smd) {
+    width: 25%;
+  }
+  img {
+    object-fit: cover;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  &_one {
+    background: $bg-client-one;
+    @media (min-width: $display-bg) {
+      border-radius: 12px 0 0 0;
+    }
+  }
+  &_two {
+    background: $bg-client-two;
+  }
+  &_three {
+    background: $bg-client-three;
+  }
+  &_four {
+    background: $bg-client-four;
+    @media (min-width: $display-bg) {
+      border-radius: 0 12px 0 0;
+    }
+  }
+  &_five {
+    background: $bg-client-five;
+  }
+  &_six {
+    background: $bg-client-six;
+  }
+  &_seven {
+    background: $bg-client-seven;
+  }
+  &_eight {
+    background: $bg-client-eight;
+  }
+  &_nine {
+    background: $bg-client-nine;
+    @media (min-width: $display-bg) {
+      border-radius: 0 0 0 12px;
+    }
+  }
+  &_ten {
+    background: $bg-client-ten;
+  }
+  &_eleven {
+    background: $bg-client-eleven;
+  }
+  &_twelve {
+    background: $bg-client-twelve;
+    @media (min-width: $display-bg) {
+      border-radius: 0 0 12px 0;
+    }
+  }
+}
+
+// TODO: Footer
+#footer{
+  padding: 30px;
+  background-color: $color-bg-section;
+  @media(min-width: $display-sm){
+    display: grid;
+    grid-template-areas:
+    "addres . copyrite"
+    "contacts . . ";
+    grid-template-columns: auto 1fr auto;
+    padding: 30px 60px;
+  }
+  @media(min-width: $display-sm){
+    display: grid;
+    grid-template-areas:
+    "addres"
+    "contacts "
+    "copyrite";
+    grid-template-columns: auto 1fr auto;
+    padding: 30px 185px;
+  }
+  @media(min-width: $display-smd){
+    grid-template-areas:
+    "addres . copyrite"
+    "contacts . .";
+    grid-template-columns: auto 1fr auto;
+    padding: 30px 60px;
+  }
+  @media(min-width: $display-bg){
+    padding: 30px 160px;
+  }
+}
+
+.footer__dot_separator{
+  background: $color-navigation-text;
+}
+
+.footer__addres{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 21px;
+  grid-area: addres;
+  @media(min-width: $display-sm){
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 0;
+  }
+}
+
+.adress__map{
+  display: inline-block;
+  font-size: 16px;
+}
+
+.map{
+  font-size: 12px;
+  margin-top: 10px;
+  @media(min-width: $display-sm){
+    margin-top: 0;
+  }
+}
+
+.footer__contacts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: contacts;
+  @media(min-width: $display-sm){
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 21px;
+    margin-bottom: 30px;
+  }
+  @media(min-width: $display-smd){
+    margin-bottom: 0;
+  }
+}
+
+.footer__phone{
+  font-weight: 700;
+  font-size: 16px;
+  color: $color-footer-phone;
+  margin: 10px 0;
+}
+
+.email{
+  text-transform: lowercase;
+}
+
+#copyrite{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  grid-area: copyrite;
+  @media(min-width: $display-sm){
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: start;
+  }
+}
+
+.copyrite{
+  color: $color-navigation-text;
+  margin: 0;
+}
